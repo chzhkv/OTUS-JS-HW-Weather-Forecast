@@ -13,6 +13,7 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+    "husky": "^9.0.11",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
