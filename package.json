@@ -6,7 +6,9 @@
     "test": "jest",
     "lint": "prettier --check . && eslint .",
     "lint:fix": "prettier --write . && eslint . --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +30,8 @@
     "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.3.2",
     "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
