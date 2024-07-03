@@ -1,11 +1,13 @@
+.app {
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
+  background-color: white;
   width: 30%;
-  height: 768px;
   margin: 0 auto;
   padding: 40px;
-  border: 2px dashed #bbb;
   border-radius: 24px;
   font-family: Comic Sans MS;
   font-size: 18px;
@@ -41,10 +43,8 @@ ul {
 
 .info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 2px dashed #bbb;
-  height: 100px;
   width: 46%;
 }
 

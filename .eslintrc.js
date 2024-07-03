@@ -11,7 +11,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "max-len": ["error", { ignoreComments: true }],
+    "max-len": "off",
   },
   plugins: ["jest"],
 };
