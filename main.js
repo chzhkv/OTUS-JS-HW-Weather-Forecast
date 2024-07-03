@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector(".app").innerHTML=`<h2>${25}</h2>`})();
