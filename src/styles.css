@@ -1,15 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+}
+
 .app {
+  background-color: #bbbbbb;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
   display: flex;
   justify-content: space-between;
   background-color: white;
-  width: 30%;
+  width: 50%;
   margin: 0 auto;
   padding: 40px;
   border-radius: 24px;
-  font-family: Comic Sans MS;
+  font-family: "Arial";
   font-size: 18px;
 }
 
@@ -36,8 +49,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px dashed #bbb;
-  height: 100px;
+  border-radius: 10px;
   width: 46%;
 }
 
@@ -45,18 +57,21 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 46%;
 }
 
 .search {
   display: inline-flex;
   border: 1px solid black;
+  border-radius: 10px;
   padding: 10px;
 }
 
 .search-button {
   display: inline-flex;
   border: 1px solid black;
+  border-radius: 10px;
   padding: 12px;
   background-color: #fff;
   margin-left: 10px;
