@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast</title>
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="wrapper">
       <div>
-        <div class="search-wrapper">
+        <form class="search-wrapper">
           <div class="search">
             <input type="text" class="search-field" placeholder="Weather" />
             <img
@@ -18,10 +18,10 @@
             />
           </div>
           <button type="submit" class="search-button">Show</button>
-        </div>
+        </form>
         <div class="info-wrapper">
-          <div class="map">Map</div>
-          <div class="info">Weather info</div>
+          <section class="map">Map</section>
+          <section class="info">Weather info</section>
         </div>
       </div>
       <div>
@@ -34,5 +34,6 @@
         </ul>
       </div>
     </div>
+    <div class="app"></div>
   </body>
 </html>
