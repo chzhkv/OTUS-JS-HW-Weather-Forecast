@@ -1,11 +1,16 @@
 import "./styles.css";
-import { getWeather } from "./getWeather";
-import { showWeather } from "./showWeather";
-import { showMap } from "./showMap";
-import { API_KEY_YANDEX_MAP } from "./constants";
-import { getCurrentWeather } from "./getCurrentWeather";
+import { showSearchingWeather } from "./showSearchingWeather";
+import { showCurrentLocationWeather } from "./showCurrentLocationWeather";
 
 document.querySelector(".app").innerHTML = `
+    <h1 style="    
+    text-align: center;
+    font-size: 3vw;
+    margin-bottom: 20px;
+    ">
+        Weather Forecast
+    </h1>
+    
     <div class="wrapper">
           <div>
             <form class="search-wrapper">
@@ -37,33 +42,5 @@ document.querySelector(".app").innerHTML = `
         </div>
 `;
 
-navigator.geolocation.getCurrentPosition(async function (position) {
-  let userLocation = {
-    lat: position.coords.latitude,
-    lng: position.coords.longitude,
-  };
-
-  document.querySelector(".map").innerHTML =
-    `<img src="https://static-maps.yandex.ru/v1?ll=${userLocation.lng},${userLocation.lat}&lang=en_RU&size=200,200&z=10&apikey=${API_KEY_YANDEX_MAP}">`;
-
-  let currentCityWeather = await getCurrentWeather(userLocation);
-  document.querySelector(".info").innerHTML = `
-            <img src ='http://openweathermap.org/img/wn/${currentCityWeather.weather[0].icon}@2x.png'>
-            <h2>${currentCityWeather?.main?.temp}°C </h2>            
-            <span>${currentCityWeather?.name}</span>
-    `;
-});
-
-const formEl = document.querySelector("form");
-const weatherInfoEl = document.querySelector(".info");
-const mapInfoEl = document.querySelector(".map");
-formEl.addEventListener("submit", async (ev) => {
-  ev.preventDefault();
-  const formElement = ev.target;
-  const inputEl = formElement.querySelector("input");
-  const cityName = inputEl.value;
-  inputEl.value = "";
-  const cityWeather = await getWeather(cityName);
-  showWeather(weatherInfoEl, cityWeather);
-  showMap(mapInfoEl, cityWeather);
-});
+showCurrentLocationWeather();
+showSearchingWeather();
