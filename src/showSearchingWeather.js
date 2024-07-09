@@ -4,6 +4,7 @@ import { showMap } from "./showMap";
 import { readHistoryList } from "./readHistoryList";
 import { drawHistoryList } from "./drawHistoryList";
 import { saveHistoryList } from "./saveHistoryList";
+import { drawHistoryElWeather } from "./drawHistoryElWeather";
 
 export function showSearchingWeather() {
   const formEl = document.querySelector("form");
@@ -28,5 +29,6 @@ export function showSearchingWeather() {
     showMap(mapInfoEl, cityWeather);
     drawHistoryList(historyListEl, historyItems);
     saveHistoryList(historyItems);
+    drawHistoryElWeather();
   });
 }

@@ -1,10 +1,18 @@
-export function drawHistoryElWeather() {
-  const historyListElement = document.querySelector(".history-list-el");
+import { getWeather } from "./getWeather";
+import { showWeather } from "./showWeather";
+import { showMap } from "./showMap";
 
-  if (historyListElement !== null) {
-    historyListElement.addEventListener("click", (ev) => {
-      ev.preventDefault();
-      console.log(historyListElement.innerText);
+export function drawHistoryElWeather() {
+  const historyListElements = document.querySelectorAll(".history-list-el");
+  const mapInfoEl = document.querySelector(".map");
+  const weatherInfoEl = document.querySelector(".info");
+
+  historyListElements.forEach((el) => {
+    el.addEventListener("click", async () => {
+      const cityName = el.innerText;
+      const cityWeather = await getWeather(cityName);
+      showWeather(weatherInfoEl, cityWeather);
+      showMap(mapInfoEl, cityWeather);
     });
-  }
+  });
 }
