@@ -14,8 +14,8 @@ export function showCurrentLocationWeather() {
     let currentCityWeather = await getCurrentWeather(userLocation);
     document.querySelector(".info").innerHTML = `
             <img src ='http://openweathermap.org/img/wn/${currentCityWeather.weather[0].icon}@2x.png'>
-            <h2>${currentCityWeather?.main?.temp}°C </h2>            
-            <span>${currentCityWeather?.name}</span>
+            <h2>${Math.round(currentCityWeather?.main?.temp)}°C </h2>            
+            <span class="city-name">${currentCityWeather?.name}</span>
     `;
   });
 }

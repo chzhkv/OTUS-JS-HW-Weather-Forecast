@@ -1,18 +1,11 @@
 import "./styles.css";
 import { showSearchingWeather } from "./showSearchingWeather";
 import { showCurrentLocationWeather } from "./showCurrentLocationWeather";
+import { drawHistoryElWeather } from "./drawHistoryElWeather";
 
-document.querySelector(".app").innerHTML = `
-    <h1 style="    
-    text-align: center;
-    font-size: 3vw;
-    margin-bottom: 20px;
-    ">
-        Weather Forecast
-    </h1>
-    
+document.querySelector(".app").innerHTML = `    
     <div class="wrapper">
-          <div>
+          <div class="main-wrapper">
             <form class="search-wrapper">
               <div class="search">
                 <input type="text" class="search-field" placeholder="Type city" required/>
@@ -30,17 +23,14 @@ document.querySelector(".app").innerHTML = `
               <section class="info"></section>             
             </div>
           </div>
-          <div>
-            <div>History</div>
+          <div class="history-wrapper">
+            <h3>History</h3>
             <hr class="solid" />
-              <ul>
-                <li>London</li>
-                <li>Minsk</li>
-                <li>Moscow</li>
-              </ul>
+            <div id="list"></div>
           </div>
         </div>
 `;
 
 showCurrentLocationWeather();
 showSearchingWeather();
+drawHistoryElWeather();
