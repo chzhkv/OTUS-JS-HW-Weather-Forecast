@@ -21,7 +21,7 @@ export function showSearchingWeather() {
     const cityName = inputEl.value;
     inputEl.value = "";
 
-    historyItems.push(cityName);
+    historyItems.includes(cityName) ? null : historyItems.push(cityName);
     historyItems.length > 10 ? historyItems.shift() : null;
 
     const cityWeather = await getWeather(cityName);
