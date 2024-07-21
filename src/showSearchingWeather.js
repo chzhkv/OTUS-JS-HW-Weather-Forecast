@@ -21,14 +21,16 @@ export function showSearchingWeather() {
     const cityName = inputEl.value;
     inputEl.value = "";
 
-    historyItems.includes(cityName) ? null : historyItems.push(cityName);
-    historyItems.length > 10 ? historyItems.shift() : null;
-
     const cityWeather = await getWeather(cityName);
     showWeather(weatherInfoEl, cityWeather);
     showMap(mapInfoEl, cityWeather);
     drawHistoryList(historyListEl, historyItems);
     saveHistoryList(historyItems);
     drawHistoryElWeather();
+
+    historyItems.includes(cityName || !cityWeather)
+      ? null
+      : historyItems.push(cityName);
+    historyItems.length > 10 ? historyItems.shift() : null;
   });
 }

@@ -5,11 +5,13 @@ export async function getWeather(cityName) {
     let data = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=${API_KEY_OPENWEATHER}`,
     );
-    return data.json();
-  } catch (err) {
-    alert(
-      err,
-      "Unfortunately, we cannot find this city. Please enter the correct city name",
-    );
+    if (data.ok) {
+      return data.json();
+    } else {
+      throw new Error(data.status);
+    }
+  } catch (error) {
+    alert("City not found! Please try again");
+    console.log(error);
   }
 }
