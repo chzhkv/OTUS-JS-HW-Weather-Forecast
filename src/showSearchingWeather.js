@@ -5,6 +5,7 @@ import { readHistoryList } from "./readHistoryList";
 import { drawHistoryList } from "./drawHistoryList";
 import { saveHistoryList } from "./saveHistoryList";
 import { drawHistoryElWeather } from "./drawHistoryElWeather";
+import { drawError } from "./drawError";
 
 export function showSearchingWeather() {
   const formEl = document.querySelector("form");
@@ -26,8 +27,13 @@ export function showSearchingWeather() {
       ? null
       : historyItems.push(cityName);
     historyItems.length > 10 ? historyItems.shift() : null;
-    showWeather(weatherInfoEl, cityWeather);
-    showMap(mapInfoEl, cityWeather);
+
+    if (!cityWeather) {
+      drawError(mapInfoEl, weatherInfoEl);
+    } else {
+      showWeather(weatherInfoEl, cityWeather);
+      showMap(mapInfoEl, cityWeather);
+    }
     drawHistoryList(historyListEl, historyItems);
     saveHistoryList(historyItems);
     drawHistoryElWeather();

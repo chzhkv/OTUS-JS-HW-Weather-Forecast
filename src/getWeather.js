@@ -11,7 +11,7 @@ export async function getWeather(cityName) {
       throw new Error(data.status);
     }
   } catch (error) {
-    alert("City not found! Please try again");
+    //alert("City not found! Please try again");
     console.log(error);
   }
 }

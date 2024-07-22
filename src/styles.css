@@ -52,8 +52,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width: 46%;
+  min-width: 46%;
 }
 
 .map-img {
@@ -65,7 +64,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 46%;
+  min-width: 46%;
   background-color: #bbbbbb;
   border-radius: 10px;
 }
@@ -133,4 +132,19 @@ ul {
 .city-name {
   font-weight: bold;
   margin-top: 4px;
+}
+
+.error-span {
+  padding: 0 10px;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  background: #ff9393;
+  border-radius: 10px;
+  padding: 5px;
 }
